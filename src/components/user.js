@@ -7,7 +7,7 @@ class User extends React.Component {
     render() {
         return (
             <div className="user" >
-                <IoCloseCircleSharp className="delete-icon" />
+                <IoCloseCircleSharp onClick={() => this.props.onDelete(this.user.id)} className="delete-icon" />
                 <IoHammerSharp className="edit-icom" />
                 <h3>{this.user.firstName} {this.user.lastName}</h3>
                 <p>{this.user.bio}</p>
