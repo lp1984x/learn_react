@@ -6,31 +6,27 @@ class AddUser extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            firstName: "",
-            lastName: "",
-            bio: "",
-            age: 1,
-            isHappy: false
+            first_name: "",
+            last_name: "",
+            email: "",
+            avatar: ""
         }
     }
 
     render() {
         return (
             <form ref={(el) => this.myForm = el}>
-                <input placeholder="first name" onChange={(e) => this.setState({ firstName: e.target.value })} />
-                <input placeholder="last name" onChange={(e) => this.setState({ lastName: e.target.value })} />
-                <textarea placeholder="bio" onChange={(e) => this.setState({ bio: e.target.value })}></textarea>
-                <input placeholder="age" onChange={(e) => this.setState({ age: e.target.value })} />
-                <label htmlFor="isHappy">Happy?</label>
-                <input type="checkbox" id="isHappy" onChange={(e) => this.setState({ isHappy: e.target.checked })} />
+                <input placeholder="first name" onChange={(e) => this.setState({ first_name: e.target.value })} />
+                <input placeholder="last name" onChange={(e) => this.setState({ last_name: e.target.value })} />
+                <textarea placeholder="email" onChange={(e) => this.setState({ email: e.target.value })}></textarea>
+                <input placeholder="avatar url" onChange={(e) => this.setState({ avatar: e.target.value })} />
                 <button type="button" onClick={() => {
                     this.myForm.reset()
                     this.userAdd = {
-                        firstName: this.state.firstName,
-                        lastName: this.state.lastName,
-                        bio: this.state.bio,
-                        age: this.state.age,
-                        isHappy: this.state.isHappy,
+                        first_name: this.state.first_name,
+                        last_name: this.state.last_name,
+                        email: this.state.email,
+                        avatar: this.state.avatar
                     }
                     if (this.props.user) {
                         this.userAdd.id = this.props.user.id
